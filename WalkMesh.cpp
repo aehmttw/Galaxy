@@ -224,7 +224,7 @@ bool WalkMesh::cross_edge(WalkPoint const &start, WalkPoint *end_, glm::quat *ro
 
         glm::vec3 c = glm::cross(n1, n2);
         if (glm::length(c) > 0.00001f)
-            rotation = glm::normalize(glm::angleAxis(asin(glm::length(c)), glm::normalize(c)));
+            rotation = glm::normalize((float) glm::angleAxis((float) asin(glm::length(c)), glm::normalize(c)));
         else
             rotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
 
